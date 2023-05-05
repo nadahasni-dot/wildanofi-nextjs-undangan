@@ -1,5 +1,11 @@
 import { Grand_Hotel } from "next/font/google";
 import GuestBook from "./GuestBook";
+import { useState } from "react";
+import { BottomSheet } from "react-spring-bottom-sheet";
+
+// bottom sheet css
+import "react-spring-bottom-sheet/dist/style.css";
+import GiftSheet from "./GiftSheet";
 
 const grandHotel = Grand_Hotel({
   subsets: ["latin"],
@@ -7,6 +13,9 @@ const grandHotel = Grand_Hotel({
 });
 
 export default function Gift() {
+  const [isSendGiftOpen, setIsSendGiftOpen] = useState(false);
+  const [isGiftConfirmationOpen, setIsGiftConfirmationOpen] = useState(false);
+
   return (
     <section
       id="others"
@@ -19,11 +28,31 @@ export default function Gift() {
         Kehadiran Anda merupakan hadiah terindah. Namun, apabila Anda hendak
         memberikan tanda kasih kepada kami, dapat melalui fitur di bawah ini.
       </p>
-      {/* TODO Open Sheet Hadiah */}
-      <button className="block w-40 py-2 mx-auto transition text-xs rounded-xl bg-primary-900 hover:bg-opacity-70 mb-3">
+      {/* Sheet Gift */}
+      <BottomSheet
+        className="bg-primary-900"
+        open={isSendGiftOpen}
+        onDismiss={() => setIsSendGiftOpen(false)}
+      >
+        <GiftSheet />
+      </BottomSheet>
+      {/* Sheet Gift Confirmation */}
+      <BottomSheet
+        open={isGiftConfirmationOpen}
+        onDismiss={() => setIsGiftConfirmationOpen(false)}
+      >
+        <div>Gift Confirmation</div>
+      </BottomSheet>
+      <button
+        onClick={() => setIsSendGiftOpen(true)}
+        className="block w-40 py-2 mx-auto transition text-xs rounded-xl bg-primary-900 hover:bg-opacity-70 mb-3"
+      >
         Kirim Hadiah
       </button>
-      <button className="block w-40 py-2 mx-auto transition text-xs rounded-xl bg-white hover:bg-opacity-70 text-primary-300 mb-6">
+      <button
+        onClick={() => setIsGiftConfirmationOpen(true)}
+        className="block w-40 py-2 mx-auto transition text-xs rounded-xl bg-white hover:bg-opacity-70 text-primary-300 mb-6"
+      >
         Konfirmasi Hadiah
       </button>
       {/* GUEST BOOK */}
