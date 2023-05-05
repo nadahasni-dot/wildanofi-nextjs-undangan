@@ -5,6 +5,11 @@ import Head from "next/head";
 import { Poppins } from "next/font/google";
 import { useRouter } from "next/router";
 import Gallery from "@/components/Gallery";
+import Gift from "@/components/Gift";
+import { ToastContainer } from "react-toastify";
+
+// Toastify CSS
+import 'react-toastify/dist/ReactToastify.css';
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -37,10 +42,13 @@ export default function Invitation() {
       <Gallery />
 
       {/* HADIAH & BUKU TAMU */}
+      <Gift />
 
       {/* UCAPAN DOA */}
 
       {/* END */}
+
+      <ToastContainer />
     </main>
   );
 }
