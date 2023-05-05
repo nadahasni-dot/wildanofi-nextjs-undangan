@@ -13,7 +13,10 @@ const parisienne = Parisienne({
 
 export default function Brides() {
   return (
-    <section className="flex flex-col items-center py-12 bg-primary-900">
+    <section
+      id="brides"
+      className="flex flex-col items-center py-12 bg-primary-900"
+    >
       <h2 className={`text-4xl text-center mb-4 ${grandHotel.className}`}>
         Kedua Mempelai
       </h2>
@@ -62,7 +65,7 @@ export default function Brides() {
         </p>
       </div>
 
-      <Image src="/rofiqoh.svg" width={250} height={30} alt="rofiqoh" />
+      <Image src="/wildan.svg" width={250} height={30} alt="rofiqoh" />
 
       <p className="px-4 mt-2 text-xs font-light text-center">
         Putra kedua dari <br />

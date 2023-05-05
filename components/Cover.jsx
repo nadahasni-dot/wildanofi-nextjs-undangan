@@ -15,6 +15,7 @@ const alexBrush = Alex_Brush({ subsets: ["latin"], weight: ["400"] });
 export default function Cover() {
   return (
     <section
+      id="cover"
       className={`flex flex-col justify-between w-full min-h-screen bg-center bg-cover bg-cover-hero ${poppins.className}`}
     >
       <div>
