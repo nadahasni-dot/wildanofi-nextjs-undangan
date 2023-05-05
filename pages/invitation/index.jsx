@@ -1,9 +1,10 @@
 import Brides from "@/components/Brides";
 import Cover from "@/components/Cover";
 import Date from "@/components/Date";
-import { Poppins } from "next/font/google";
 import Head from "next/head";
+import { Poppins } from "next/font/google";
 import { useRouter } from "next/router";
+import Gallery from "@/components/Gallery";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function Invitation() {
       <Date sesi={sesi} />
 
       {/* GALLERT */}
+      <Gallery />
 
       {/* HADIAH & BUKU TAMU */}
 
