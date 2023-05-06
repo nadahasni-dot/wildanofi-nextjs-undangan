@@ -28,25 +28,29 @@ export default function Banner({ to, onOpen }) {
           width={300}
           height={90}
         />
-        <p className="mt-4 text-xs font-medium">
-          Kepada Yth. Bapak/Ibu/Saudara/i
-        </p>
-        <p className="mt-4 text-2xl font-bold animate-pulse">{to}</p>
-        <a
-          href="#cover"
-          onClick={() => {
-            setIsShow(false);
+        <div className="items-center px-6 py-4 mt-4 mb-16 border-2 border-white shadow-xl bg-black/30 shadow-black/60 rounded-xl">
+          <p className="text-xs font-medium text-white">
+            Kepada Yth. Bapak/Ibu/Saudara/i
+          </p>
+          <p className="mt-4 mb-4 text-2xl font-bold text-center text-white animate-pulse">
+            {to}
+          </p>
+          <a
+            href="#cover"
+            onClick={() => {
+              setIsShow(false);
 
-            setTimeout(function () {
-              setIsHide(true);
-            }, 1000);
+              setTimeout(function () {
+                setIsHide(true);
+              }, 1000);
 
-            onOpen(true);
-          }}
-          className="px-6 py-2 mt-4 mb-24 text-xs font-semibold text-black transition bg-white rounded-lg hover:bg-gray-300"
-        >
-          Buka Undangan
-        </a>
+              onOpen(true);
+            }}
+            className="block w-40 px-6 py-2 mx-auto text-xs font-semibold text-center text-black transition bg-white rounded-lg hover:bg-gray-300"
+          >
+            Buka Undangan
+          </a>
+        </div>
       </section>
     </div>
   );

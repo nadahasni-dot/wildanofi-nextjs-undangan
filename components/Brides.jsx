@@ -1,4 +1,4 @@
-import { Grand_Hotel, Parisienne } from "next/font/google";
+import { Grand_Hotel, Parisienne, Poppins } from "next/font/google";
 import Image from "next/image";
 
 const grandHotel = Grand_Hotel({
@@ -9,6 +9,12 @@ const grandHotel = Grand_Hotel({
 const parisienne = Parisienne({
   subsets: ["latin"],
   weight: ["400"],
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
 });
 
 export default function Brides() {
@@ -23,7 +29,10 @@ export default function Brides() {
       >
         Kedua Mempelai
       </h2>
-      <p data-aos="fade-down" className="px-4 text-xs font-light text-center">
+      <p
+        data-aos="fade-down"
+        className={`px-4 text-xs font-light text-center ${poppins.className}`}
+      >
         Maha suci Allah Subhanahu Wa Ta'ala yang telah menciptakan makhluk-Nya
         berpasang-pasangan. Dengan memohon Rahmat dan Ridho Allah Subhanahu Wa
         Ta'ala, kami bermaksud menyelenggarakan pernikahan kami
@@ -53,7 +62,10 @@ export default function Brides() {
         alt="rofiqoh"
       />
 
-      <p data-aos="fade" className="px-4 mt-2 text-xs font-light text-center">
+      <p
+        data-aos="fade"
+        className={`px-4 mt-2 text-xs font-light text-center ${poppins.className}`}
+      >
         Putri Bungsu dari <br />
         Bapak H. Suharto & Ibu Hj. Shochifah
       </p>
@@ -63,7 +75,7 @@ export default function Brides() {
         <a
           href="https://instagram.com/rofiqohms"
           target="_blank"
-          className="mx-1 text-xs font-light"
+          className={`mx-1 text-xs font-light ${poppins.className}`}
         >
           rofiqohms
         </a>
@@ -101,7 +113,10 @@ export default function Brides() {
         alt="rofiqoh"
       />
 
-      <p data-aos="fade" className="px-4 mt-2 text-xs font-light text-center">
+      <p
+        data-aos="fade"
+        className={`px-4 mt-2 text-xs font-light text-center ${poppins.className}`}
+      >
         Putra kedua dari <br />
         Bapak Zainuri & Ibu Euis Yudarsih R.
       </p>
@@ -111,7 +126,7 @@ export default function Brides() {
         <a
           href="https://instagram.com/wildannazar25"
           target="_blank"
-          className="mx-1 text-xs font-light"
+          className={`mx-1 text-xs font-light ${poppins.className}`}
         >
           wildannazar25
         </a>
