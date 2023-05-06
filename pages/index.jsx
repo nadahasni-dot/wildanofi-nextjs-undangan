@@ -71,7 +71,7 @@ export default function Home() {
   const { to, sesi } = router.query;
 
   return (
-    <>
+    <div className={`${poppins.className} text-white`}>
       <Head>
         <title>Pernikahan Ofi & Wildan</title>
       </Head>
@@ -126,6 +126,6 @@ export default function Home() {
 
         <ToastContainer />
       </main>
-    </>
+    </div>
   );
 }

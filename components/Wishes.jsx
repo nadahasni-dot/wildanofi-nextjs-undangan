@@ -1,6 +1,6 @@
 import axios from "axios";
 import moment from "moment";
-import { Grand_Hotel } from "next/font/google";
+import { Grand_Hotel, Poppins } from "next/font/google";
 import Image from "next/image";
 import { useState } from "react";
 import { isError, useMutation, useQuery, useQueryClient } from "react-query";
@@ -9,6 +9,12 @@ import { toast } from "react-toastify";
 const grandHotel = Grand_Hotel({
   subsets: ["latin"],
   weight: ["400"],
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
 });
 
 export default function Wishes() {
@@ -86,7 +92,7 @@ export default function Wishes() {
   return (
     <section
       id="wishes"
-      className="flex flex-col items-stretch py-12 bg-primary-900 px-6"
+      className={`flex flex-col items-stretch py-12 bg-primary-900 px-6 ${poppins.className}`}
     >
       <h2
         data-aos="fade"
@@ -94,11 +100,11 @@ export default function Wishes() {
       >
         Ucapan & Doa
       </h2>
-      <p data-aos="fade" className="text-xs text-center mb-6">
+      <p data-aos="fade" className="mb-6 text-xs text-center">
         Kirimkan doa dan ucapan terbaik untuk kami
       </p>
       {isSuccess ? (
-        <div className="p-3 bg-white shadow shadow-black/20 rounded-lg mb-8">
+        <div className="p-3 mb-8 bg-white rounded-lg shadow shadow-black/20">
           <p className="text-sm text-black">
             Terimakasih <span className="font-semibold">{name}</span> atas
             Ucapan & Doa nya
@@ -113,7 +119,7 @@ export default function Wishes() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Nama Anda"
-            className="rounded-lg border-gray-200 border w-full bg-white px-2 py-1 drop-shadow-xl text-black active:border-primary-900 mb-4"
+            className="w-full px-2 py-1 mb-4 text-black bg-white border border-gray-200 rounded-lg drop-shadow-xl active:border-primary-900"
             required
           />
           <textarea
@@ -123,13 +129,13 @@ export default function Wishes() {
             value={wishes}
             onChange={(e) => setWishes(e.target.value)}
             placeholder="Tulis Ucapan & Doa"
-            className="rounded-lg border-gray-200 border w-full bg-white px-2 py-1 drop-shadow-xl text-black active:border-primary-900 mb-4"
+            className="w-full px-2 py-1 mb-4 text-black bg-white border border-gray-200 rounded-lg drop-shadow-xl active:border-primary-900"
             required
             rows={4}
           ></textarea>
           <button
             type="submit"
-            className="block w-40 py-2 mx-auto transition text-sm rounded-xl bg-primary-200 hover:bg-opacity-70 mb-6"
+            className="block w-40 py-2 mx-auto mb-6 text-sm transition rounded-xl bg-primary-200 hover:bg-opacity-70"
           >
             {isLoading ? <>Menyimpan...</> : <>Kirim Ucapan</>}
           </button>
@@ -145,10 +151,10 @@ export default function Wishes() {
             .map((wish) => (
               <div
                 key={wish.rowIndex}
-                className="bg-white rounded-tr-lg rounded-bl-lg rounded-br-lg text-black px-4 py-2 mb-2"
+                className="px-4 py-2 mb-2 text-black bg-white rounded-tr-lg rounded-bl-lg rounded-br-lg"
               >
-                <div className="flex justify-between items-center mb-1">
-                  <p className="font-semibold text-sm truncate">{wish.name}</p>
+                <div className="flex items-center justify-between mb-1">
+                  <p className="text-sm font-semibold truncate">{wish.name}</p>
                   <p className="text-xs">{wish.timestamp}</p>
                 </div>
                 <p className="text-sm">{wish.wishes}</p>

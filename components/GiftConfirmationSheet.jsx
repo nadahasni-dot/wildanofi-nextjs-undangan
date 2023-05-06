@@ -54,21 +54,21 @@ export default function GiftConfirmationSheet() {
   };
 
   return (
-    <div className="bg-white/80 flex flex-col items-center rounded-tl-lg rounded-tr-lg mx-2 pt-6">
+    <div className="flex flex-col items-center pt-6 mx-2 rounded-tl-lg rounded-tr-lg bg-white/80">
       <Image
         src="/konfirmasi-hadiah.svg"
         alt="Hadiah Nikah"
         width={230}
         height={50}
       />
-      <p className="text-xs text-center text-primary-900 px-6 mt-1 mb-6">
+      <p className="px-6 mt-1 mb-6 text-xs text-center text-primary-900">
         Kami sangat berterima kasih kepada Bapak/Ibu/Saudara/i yang berkenan
         memberikan tanda kasih kepada kami. Silakan melakukan konfirmasi pada
         kolom di bawah untuk mempermudah pendataan
       </p>
-      <div className="bg-white w-full p-4 rounded-tl-xl rounded-tr-xl shadow shadow-black/20">
+      <div className="w-full p-4 bg-white shadow rounded-tl-xl rounded-tr-xl shadow-black/20">
         {isSuccess ? (
-          <div className="p-2 bg-white shadow shadow-black/20 rounded-lg">
+          <div className="p-2 bg-white rounded-lg shadow shadow-black/20">
             <p className="text-sm text-black">
               Terimakasih <span className="font-semibold">{name}</span> atas
               konfirmasinya
@@ -76,7 +76,7 @@ export default function GiftConfirmationSheet() {
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
-            <label htmlFor="name" className="text-black block mb-1">
+            <label htmlFor="name" className="block mb-1 text-black">
               Nama
             </label>
             <input
@@ -86,10 +86,10 @@ export default function GiftConfirmationSheet() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Nama Anda"
-              className="rounded-lg border-gray-200 border w-full bg-white px-2 py-1 drop-shadow-xl text-black active:border-primary-900 mb-4"
+              className="w-full px-2 py-1 mb-4 text-black bg-white border border-gray-200 rounded-lg drop-shadow-xl active:border-primary-900"
               required
             />
-            <label htmlFor="type" className="text-black block mb-1">
+            <label htmlFor="type" className="block mb-1 text-black">
               Konfirmasi Kehadiran
             </label>
             <select
@@ -99,14 +99,14 @@ export default function GiftConfirmationSheet() {
               placeholder="Pilih Hadiah"
               value={type}
               onChange={(e) => setType(e.target.value)}
-              className="rounded-lg border-gray-200 border w-full bg-white px-2 py-1 drop-shadow-xl text-black active:border-primary-900 appearance-none mb-4"
+              className="w-full px-2 py-1 mb-4 text-black bg-white border border-gray-200 rounded-lg appearance-none drop-shadow-xl active:border-primary-900"
               required
             >
               <option value="">Pilih Hadiah</option>
               <option value="E-Money">E-Money</option>
               <option value="Barang">Barang</option>
             </select>
-            <label htmlFor="note" className="text-black block mb-1">
+            <label htmlFor="note" className="block mb-1 text-black">
               Keterangan
             </label>
             <textarea
@@ -116,13 +116,13 @@ export default function GiftConfirmationSheet() {
               value={note}
               onChange={(e) => setNote(e.target.value)}
               placeholder="Silahkan berikan pesan kepada kami"
-              className="rounded-lg border-gray-200 border w-full bg-white px-2 py-1 drop-shadow-xl text-black active:border-primary-900 mb-4"
+              className="w-full px-2 py-1 mb-4 text-black bg-white border border-gray-200 rounded-lg drop-shadow-xl active:border-primary-900"
               required
               rows={4}
             ></textarea>
             <button
               type="submit"
-              className="block w-full py-2 mx-auto transition text-sm rounded-xl bg-primary-900 hover:bg-opacity-70 mb-6"
+              className="block w-full py-2 mx-auto mb-12 text-sm transition rounded-xl bg-primary-900 hover:bg-opacity-70"
             >
               {isLoading ? <>Menyimpan...</> : <>Konfirmasi</>}
             </button>

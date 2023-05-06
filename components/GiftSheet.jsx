@@ -15,14 +15,14 @@ export default function GiftSheet() {
   };
 
   return (
-    <div className="bg-white/80 flex flex-col items-center rounded-tl-lg rounded-tr-lg mx-2 py-6">
+    <div className="flex flex-col items-center py-6 mx-2 rounded-tl-lg rounded-tr-lg bg-white/80">
       <Image
         src="/hadiah-nikah.svg"
         alt="Hadiah Nikah"
         width={230}
         height={50}
       />
-      <p className="text-xs text-center text-primary-900 px-20 mt-1 mb-6">
+      <p className="px-20 mt-1 mb-6 text-xs text-center text-primary-900">
         Silahkan kirim hadiah Melalui nomor rekening dompet digital berikut:
       </p>
       <img
@@ -37,7 +37,7 @@ export default function GiftSheet() {
         alt="bank account"
         className="mb-8"
       />
-      <p className="text-xl text-center font-semibold text-primary-900 px-20">
+      <p className="px-20 mb-8 text-xl font-semibold text-center text-primary-900">
         Terimakasih
       </p>
     </div>
