@@ -12,32 +12,44 @@ const grandHotel = Grand_Hotel({
 });
 
 export default function Wishes() {
-  const queryClient = useQueryClient();
-
   const [name, setName] = useState("");
   const [wishes, setWishes] = useState("");
+  const [dataList, setDataList] = useState([]);
 
   const fetchWishes = () => {
     return axios.get(
-      "https://sheetdb.io/api/v1/bvdw3ewmqsqbj?sort_by=unix&sort_order=desc"
+      "https://api.sheetson.com/v2/sheets/Sheet1?apiKey=BwcI4qkYDFQXaEnnRdOhc1g2uCmiQsIG1NyiOZcF-Db7-dZYkO7Rb_RNl3Q&spreadsheetId=10IlBYqeLnEEFqYYtCHL4Bc_UWXUWl-4k6q_-ZRFqvUA&limit=100"
     );
   };
 
   const {
     isLoading: isWishesLoading,
     isError: isWishesError,
-    data: wishList,
     error: wishListError,
   } = useQuery("wishes", fetchWishes, {
-    onError: (error) => {
-      console.log(error);
+    onSuccess: (data) => {
+      setDataList([...data.data.results]);
+    },
+    onError: () => {
+      console.log(wishListError);
     },
   });
 
   const addWishes = (wishesData) => {
-    return axios.post("https://sheetdb.io/api/v1/bvdw3ewmqsqbj", {
-      data: [wishesData],
-    });
+    return axios.post(
+      "https://api.sheetson.com/v2/sheets/Sheet1",
+      {
+        ...wishesData,
+      },
+      {
+        headers: {
+          Authorization:
+            "Bearer BwcI4qkYDFQXaEnnRdOhc1g2uCmiQsIG1NyiOZcF-Db7-dZYkO7Rb_RNl3Q",
+          "X-Spreadsheet-Id": "10IlBYqeLnEEFqYYtCHL4Bc_UWXUWl-4k6q_-ZRFqvUA",
+          "Content-Type": "application/json",
+        },
+      }
+    );
   };
 
   const {
@@ -46,11 +58,11 @@ export default function Wishes() {
     isSuccess,
     error,
   } = useMutation(addWishes, {
-    onSuccess: () => {
+    onSuccess: (data) => {
       toast("Terimakasih! Ucapan & Doa anda telah tersimpan", {
         type: "success",
       });
-      queryClient.invalidateQueries("wishes");
+      setDataList([...dataList, data.data]);
     },
     onError: () => {
       console.log(error, "error");
@@ -128,18 +140,20 @@ export default function Wishes() {
         {isWishesError || isWishesLoading ? (
           <p>Loading Data ...</p>
         ) : (
-          wishList.data.map((wish, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-tr-lg rounded-bl-lg rounded-br-lg text-black px-4 py-2 mb-2"
-            >
-              <div className="flex justify-between items-center mb-1">
-                <p className="font-semibold text-sm truncate">{wish.name}</p>
-                <p className="text-xs">{wish.timestamp}</p>
+          dataList
+            .sort((a, b) => (a.unix < b.unix ? 1 : -1))
+            .map((wish) => (
+              <div
+                key={wish.rowIndex}
+                className="bg-white rounded-tr-lg rounded-bl-lg rounded-br-lg text-black px-4 py-2 mb-2"
+              >
+                <div className="flex justify-between items-center mb-1">
+                  <p className="font-semibold text-sm truncate">{wish.name}</p>
+                  <p className="text-xs">{wish.timestamp}</p>
+                </div>
+                <p className="text-sm">{wish.wishes}</p>
               </div>
-              <p className="text-sm">{wish.wishes}</p>
-            </div>
-          ))
+            ))
         )}
       </div>
       <Image

@@ -11,9 +11,20 @@ export default function GiftConfirmationSheet() {
   const [note, setNote] = useState("");
 
   const addConfirmation = (confirmationData) => {
-    return axios.post("https://sheetdb.io/api/v1/fafjz4ujycx4n", {
-      data: [confirmationData],
-    });
+    return axios.post(
+      "https://api.sheetson.com/v2/sheets/Sheet1",
+      {
+        ...confirmationData,
+      },
+      {
+        headers: {
+          Authorization:
+            "Bearer BwcI4qkYDFQXaEnnRdOhc1g2uCmiQsIG1NyiOZcF-Db7-dZYkO7Rb_RNl3Q",
+          "X-Spreadsheet-Id": "12JPFimibUXdUbMIrwf20fNmHYoM7RGAPhYA0kBfqPxY",
+          "Content-Type": "application/json",
+        },
+      }
+    );
   };
 
   const {
