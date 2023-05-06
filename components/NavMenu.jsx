@@ -197,7 +197,7 @@ export default function NavMenu() {
               menu === "others" ? "text-primary-900" : "text-white"
             }`}
           >
-            More
+            Lainnya
           </p>
         </a>
       </div>
