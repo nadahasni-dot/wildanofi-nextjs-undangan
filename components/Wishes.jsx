@@ -167,7 +167,7 @@ export default function Wishes() {
         width={340}
         height={100}
         alt="footer"
-        className="mt-6"
+        className="mx-auto mt-6"
       />
     </section>
   );
