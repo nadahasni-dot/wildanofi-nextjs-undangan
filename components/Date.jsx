@@ -12,15 +12,24 @@ export default function Date({ sesi }) {
       id="dates"
       className="flex flex-col items-stretch py-12 bg-primary-300"
     >
-      <h2 className={`text-4xl text-center mb-6 ${grandHotel.className}`}>
+      <h2
+        data-aos="fade-down"
+        className={`text-4xl text-center mb-6 ${grandHotel.className}`}
+      >
         Tanggal Penting
       </h2>
 
-      <div className="bg-cover-dates h-52 bg-cover bg-center mx-5 rounded-xl mb-6"></div>
+      <div
+        data-aos="fade"
+        className="bg-cover-dates h-52 bg-cover bg-center mx-5 rounded-xl mb-6"
+      ></div>
 
-      <div className="bg-white drop-shadow rounded-xl mx-5">
+      <div
+        data-aos="fade-down"
+        className="bg-white drop-shadow rounded-xl mx-5"
+      >
         {/* 1 Date Info */}
-        <div className="flex flex-col items-stretch">
+        <div data-aos="fade-left" className="flex flex-col items-stretch">
           <div className="flex pl-4 pr-6 pt-8 justify-between items-center mb-4">
             <div className="flex flex-col items-stretch">
               <h3 className="text-xl text-primary-900 font-medium mb-1">
@@ -59,12 +68,17 @@ export default function Date({ sesi }) {
             />
           </div>
 
-          <button className="block px-8 py-2 mx-auto transition text-xs border rounded-xl bg-primary-900 hover:bg-opacity-70 ">
+          <a
+            href="https://maps.app.goo.gl/jLtewZGjkbiQA8JU7"
+            target="_blank"
+            className="block px-8 py-2 mx-auto transition text-xs border rounded-xl bg-primary-900 hover:bg-opacity-70 "
+          >
             Buka Maps
-          </button>
+          </a>
         </div>
 
         <Image
+          data-aos="fade-down"
           src="/dates-divider.svg"
           alt="divider"
           width={600}
@@ -73,7 +87,7 @@ export default function Date({ sesi }) {
         />
 
         {/* 1 Date Info */}
-        <div className="flex flex-col items-stretch mb-6">
+        <div data-aos="fade-right" className="flex flex-col items-stretch mb-6">
           <div className="flex pl-6 pr-4 justify-between items-center mb-4">
             <Image src="/resepsi.svg" alt="akad nikah" width={30} height={50} />
             <div className="flex flex-col items-end">
@@ -113,9 +127,13 @@ export default function Date({ sesi }) {
             </div>
           </div>
 
-          <button className="block px-8 py-2 mx-auto transition text-xs border rounded-xl bg-primary-900 hover:bg-opacity-70 ">
+          <a
+            href="https://goo.gl/maps/tgABq4Lt2EwYSQK4A"
+            target="_blank"
+            className="block px-8 py-2 mx-auto transition text-xs border rounded-xl bg-primary-900 hover:bg-opacity-70 "
+          >
             Buka Maps
-          </button>
+          </a>
         </div>
       </div>
     </section>

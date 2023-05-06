@@ -16,10 +16,10 @@ export default function Cover() {
   return (
     <section
       id="cover"
-      className={`flex flex-col justify-between w-full min-h-screen bg-center bg-cover bg-cover-hero ${poppins.className}`}
+      className={`flex flex-col justify-between w-full min-h-screen bg-center bg-cover bg-cover-hero overflow-hidden ${poppins.className}`}
     >
       <div>
-        <div className="flex justify-between px-10 mt-12">
+        <div data-aos="fade-down" className="flex justify-between px-10 mt-12">
           <Image src="/cover-divider.svg" width={25} height={5} alt="divider" />
           <h3 className={`text-primary-200 text-2xl ${cormorant.className}`}>
             Pernikahan
@@ -28,15 +28,18 @@ export default function Cover() {
         </div>
 
         <h1
+          data-aos="fade"
           className={`text-primary-200 text-5xl text-center mt-5 ${alexBrush.className}`}
         >
           Ofi & Wildan
         </h1>
 
-        <h3 className="mt-2 text-center text-primary-200">14.05.2023</h3>
+        <h3 data-aos="fade" className="mt-2 text-center text-primary-200">
+          14.05.2023
+        </h3>
       </div>
 
-      <div className="mb-12">
+      <div data-aos="fade" className="mb-16">
         {/* Countdown Timer */}
         <CountdownTimer targetTime={new Date("May 14, 2023 07:00:00")} />
 

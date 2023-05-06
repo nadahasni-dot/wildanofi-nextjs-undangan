@@ -10,9 +10,14 @@ import { ToastContainer } from "react-toastify";
 
 // Toastify CSS
 import "react-toastify/dist/ReactToastify.css";
-import Document from "next/document";
 import Wishes from "@/components/Wishes";
 import End from "@/components/End";
+import NavMenu from "@/components/NavMenu";
+import { useEffect } from "react";
+
+// AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -21,41 +26,47 @@ const poppins = Poppins({
 });
 
 export default function Invitation() {
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+    });
+  }, []);
+
   const router = useRouter();
-  const { to, sesi } = router.query;
+  const { sesi } = router.query;
 
   return (
-    <main
-      className={`bg-white flex min-h-screen scroll-smooth flex-col ${poppins.className}`}
-    >
-      <Head>
-        <title>Pernikahan Ofi & Wildan</title>
-        <link rel="stylesheet" href="/css/style.css" />
-      </Head>
-      {/* COVER */}
-      <Cover />
+    <div className="bg-white">
+      <main className={`bg-white overflow-hidden ${poppins.className}`}>
+        <Head>
+          <title>Pernikahan Ofi & Wildan</title>
+          <link rel="stylesheet" href="/css/style.css" />
+        </Head>
+        {/* COVER */}
+        <Cover />
 
-      {/* BRIDES */}
-      <Brides />
+        {/* BRIDES */}
+        <Brides />
 
-      {/* DATE */}
-      <Date sesi={sesi} />
+        {/* DATE */}
+        <Date sesi={sesi} />
 
-      {/* GALLERT */}
-      <Gallery />
+        {/* GALLERT */}
+        <Gallery />
 
-      {/* HADIAH & BUKU TAMU */}
-      <Gift />
+        {/* HADIAH & BUKU TAMU */}
+        <Gift />
 
-      {/* UCAPAN DOA */}
-      <Wishes />
+        {/* UCAPAN DOA */}
+        <Wishes />
 
-      {/* END */}
-      <End />
+        {/* END */}
+        <End />
 
-      {/* Nav Menu */}
-
-      <ToastContainer />
-    </main>
+        <ToastContainer />
+      </main>
+      {/* NAV MENU */}
+      <NavMenu />
+    </div>
   );
 }

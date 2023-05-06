@@ -7,3 +7,7 @@
     --rsbs-mr: env(safe-area-inset-right);
     --rsbs-overlay-rounded: 16px;
   }
+
+html {
+  scroll-behavior: smooth;
+}

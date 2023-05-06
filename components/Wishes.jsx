@@ -76,10 +76,13 @@ export default function Wishes() {
       id="wishes"
       className="flex flex-col items-stretch py-12 bg-primary-900 px-6"
     >
-      <h2 className={`text-4xl text-center mb-2 ${grandHotel.className}`}>
+      <h2
+        data-aos="fade"
+        className={`text-4xl text-center mb-2 ${grandHotel.className}`}
+      >
         Ucapan & Doa
       </h2>
-      <p className="text-xs text-center mb-6">
+      <p data-aos="fade" className="text-xs text-center mb-6">
         Kirimkan doa dan ucapan terbaik untuk kami
       </p>
       {isSuccess ? (
@@ -90,7 +93,7 @@ export default function Wishes() {
           </p>
         </div>
       ) : (
-        <form onSubmit={handleSubmit}>
+        <form data-aos="fade" onSubmit={handleSubmit}>
           <input
             type="text"
             id="name"
@@ -121,7 +124,7 @@ export default function Wishes() {
         </form>
       )}
 
-      <div className="h-64 overflow-scroll">
+      <div data-aos="fade" className="h-64 overflow-scroll">
         {isWishesError || isWishesLoading ? (
           <p>Loading Data ...</p>
         ) : (
@@ -143,6 +146,7 @@ export default function Wishes() {
         src="/wishes-footer.svg"
         width={340}
         height={100}
+        alt="footer"
         className="mt-6"
       />
     </section>

@@ -39,7 +39,7 @@ export default function GuestBook() {
   };
 
   return (
-    <div className="bg-white rounded-xl drop-shadow-lg px-6">
+    <div data-aos="fade" className="bg-white rounded-xl drop-shadow-lg px-6">
       <h3 className="text-black font-semibold text-3xl mt-4 mb-1 text-center">
         Buku Tamu
       </h3>
@@ -89,7 +89,7 @@ export default function GuestBook() {
             type="submit"
             className="block w-full py-2 mx-auto transition text-sm rounded-xl bg-primary-900 hover:bg-opacity-70 my-6"
           >
-            {isLoading ? <>Menyimpan...</> : <>Konfirmasi Hadiah</>}
+            {isLoading ? <>Menyimpan...</> : <>Konfirmasi</>}
           </button>
         </form>
       )}

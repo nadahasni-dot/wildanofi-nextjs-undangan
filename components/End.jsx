@@ -13,7 +13,7 @@ const alexBrush = Alex_Brush({ subsets: ["latin"], weight: ["400"] });
 
 export default function End() {
   return (
-          
+    <>
       <section
         className={`flex bg-cover-end bg-cover bg-center min-h-screen min-w-full flex-col justify-end items-center ${poppins.className}`}
       >
@@ -24,7 +24,11 @@ export default function End() {
           width={300}
           height={90}
           className="mb-20"
-        />        
-      </section>    
+        />
+      </section>
+      <div className="bg-white p-4">
+        <p className="text-black text-xs text-center">© Copyright 2023 wildan</p>
+      </div>
+    </>
   );
 }
