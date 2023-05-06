@@ -12,6 +12,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Document from "next/document";
 import Wishes from "@/components/Wishes";
+import End from "@/components/End";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -50,6 +51,7 @@ export default function Invitation() {
       <Wishes />
 
       {/* END */}
+      <End />
 
       {/* Nav Menu */}
 
