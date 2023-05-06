@@ -29,12 +29,14 @@ export default function GiftSheet() {
         onClick={copyBankNumber}
         src="/img/bank.png"
         alt="bank account"
+        width={340}
         className="mb-4"
       />
       <img
         onClick={copyAddress}
         src="/img/address.png"
         alt="bank account"
+        width={340}
         className="mb-8"
       />
       <p className="px-20 mb-8 text-xl font-semibold text-center text-primary-900">
