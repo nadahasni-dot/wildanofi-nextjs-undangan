@@ -11,6 +11,7 @@ import { ToastContainer } from "react-toastify";
 // Toastify CSS
 import "react-toastify/dist/ReactToastify.css";
 import Document from "next/document";
+import Wishes from "@/components/Wishes";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,7 +30,7 @@ export default function Invitation() {
       <Head>
         <title>Pernikahan Ofi & Wildan</title>
         <link rel="stylesheet" href="/css/style.css" />
-      </Head>      
+      </Head>
       {/* COVER */}
       <Cover />
 
@@ -46,8 +47,11 @@ export default function Invitation() {
       <Gift />
 
       {/* UCAPAN DOA */}
+      <Wishes />
 
       {/* END */}
+
+      {/* Nav Menu */}
 
       <ToastContainer />
     </main>
