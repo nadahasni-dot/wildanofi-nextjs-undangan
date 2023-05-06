@@ -37,35 +37,7 @@ export default function Invitation() {
 
   return (
     <div className="bg-white">
-      <main className={`bg-white overflow-hidden ${poppins.className}`}>
-        <Head>
-          <title>Pernikahan Ofi & Wildan</title>
-        </Head>
-        {/* COVER */}
-        <Cover />
-
-        {/* BRIDES */}
-        <Brides />
-
-        {/* DATE */}
-        <Date sesi={sesi} />
-
-        {/* GALLERT */}
-        <Gallery />
-
-        {/* HADIAH & BUKU TAMU */}
-        <Gift />
-
-        {/* UCAPAN DOA */}
-        <Wishes />
-
-        {/* END */}
-        <End />
-
-        <ToastContainer />
-      </main>
-      {/* NAV MENU */}
-      <NavMenu />
+      <main className={`bg-white overflow-hidden ${poppins.className}`}></main>
     </div>
   );
 }

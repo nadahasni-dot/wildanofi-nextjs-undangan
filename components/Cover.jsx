@@ -39,7 +39,7 @@ export default function Cover() {
         </h3>
       </div>
 
-      <div data-aos="fade" className="mb-16">
+      <div data-aos="fade" className="mb-14">
         {/* Countdown Timer */}
         <CountdownTimer targetTime={new Date("May 14, 2023 07:00:00")} />
 
