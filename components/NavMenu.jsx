@@ -42,7 +42,7 @@ export default function NavMenu() {
 
   return (
     <section
-      className={`sticky w-full bottom-0 p-2 transition ${
+      className={`fixed z-40 w-full bottom-0 right-0 left-0 p-2 transition ${
         menu === "home" ? "opacity-0" : "opacity-100"
       }`}
     >
