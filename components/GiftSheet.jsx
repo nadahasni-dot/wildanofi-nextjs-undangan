@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 export default function GiftSheet() {
   const copyBankNumber = () => {
-    navigator.clipboard.writeText("039083672");
+    navigator.clipboard.writeText("0390836720");
     toast("No. Rekening berhasil disalin di papan klip", { type: "success" });
   };
 
