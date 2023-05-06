@@ -9,9 +9,20 @@ export default function GuestBook() {
   const [attendance, setAttendance] = useState("");
 
   const addAttendance = (attendanceData) => {
-    return axios.post("https://sheetdb.io/api/v1/q0635nmb1flmn", {
-      data: [attendanceData],
-    });
+    return axios.post(
+      "https://api.sheetson.com/v2/sheets/Sheet1",
+      {
+        ...attendanceData,
+      },
+      {
+        headers: {
+          Authorization:
+            "Bearer BwcI4qkYDFQXaEnnRdOhc1g2uCmiQsIG1NyiOZcF-Db7-dZYkO7Rb_RNl3Q",
+          "X-Spreadsheet-Id": "1siPOw8jH7ms_gNrtL0SNRXujYm6eebZxRPl275Xgupc",
+          "Content-Type": "application/json",
+        },
+      }
+    );
   };
 
   const {

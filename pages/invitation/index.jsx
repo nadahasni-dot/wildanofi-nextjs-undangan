@@ -40,7 +40,6 @@ export default function Invitation() {
       <main className={`bg-white overflow-hidden ${poppins.className}`}>
         <Head>
           <title>Pernikahan Ofi & Wildan</title>
-          <link rel="stylesheet" href="/css/style.css" />
         </Head>
         {/* COVER */}
         <Cover />

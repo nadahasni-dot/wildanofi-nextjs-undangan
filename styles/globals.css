@@ -25,3 +25,17 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+:root {
+  --rsbs-backdrop-bg: rgba(0, 0, 0, 0.6);
+  --rsbs-bg: #8D3333;
+  --rsbs-handle-bg: rgba(251, 239, 240, 1);
+  --rsbs-max-w: auto;
+  --rsbs-ml: env(safe-area-inset-left);
+  --rsbs-mr: env(safe-area-inset-right);
+  --rsbs-overlay-rounded: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
