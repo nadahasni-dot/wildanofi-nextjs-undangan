@@ -9,7 +9,8 @@ import Gift from "@/components/Gift";
 import { ToastContainer } from "react-toastify";
 
 // Toastify CSS
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
+import Document from "next/document";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -28,7 +29,7 @@ export default function Invitation() {
       <Head>
         <title>Pernikahan Ofi & Wildan</title>
         <link rel="stylesheet" href="/css/style.css" />
-      </Head>
+      </Head>      
       {/* COVER */}
       <Cover />
 

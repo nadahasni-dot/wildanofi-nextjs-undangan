@@ -6,6 +6,7 @@ import { BottomSheet } from "react-spring-bottom-sheet";
 // bottom sheet css
 import "react-spring-bottom-sheet/dist/style.css";
 import GiftSheet from "./GiftSheet";
+import GiftConfirmationSheet from "./GiftConfirmationSheet";
 
 const grandHotel = Grand_Hotel({
   subsets: ["latin"],
@@ -41,7 +42,7 @@ export default function Gift() {
         open={isGiftConfirmationOpen}
         onDismiss={() => setIsGiftConfirmationOpen(false)}
       >
-        <div>Gift Confirmation</div>
+        <GiftConfirmationSheet />
       </BottomSheet>
       <button
         onClick={() => setIsSendGiftOpen(true)}

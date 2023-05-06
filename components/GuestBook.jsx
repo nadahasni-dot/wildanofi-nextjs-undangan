@@ -1,32 +1,41 @@
 import axios from "axios";
 import moment from "moment/moment";
 import { useState } from "react";
+import { useMutation } from "react-query";
 import { toast } from "react-toastify";
 
 export default function GuestBook() {
   const [name, setName] = useState("");
   const [attendance, setAttendance] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const addAttendance = (attendanceData) => {
+    return axios.post("https://sheetdb.io/api/v1/q0635nmb1flmn", {
+      data: [attendanceData],
+    });
+  };
+
+  const {
+    mutate: addAttendanceData,
+    isLoading,
+    isSuccess,
+    error,
+  } = useMutation(addAttendance, {
+    onSuccess: () => {
+      toast("Terimakasih! Berhasil menyimpan buku tamu", { type: "success" });
+    },
+    onError: () => {
+      console.log(error, "error");
+      toast(error.message, { type: "error" });
+    },
+  });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    try {
-      const timestamp = moment().format("MMMM Do YYYY, h:mm:ss a");
+    if (isLoading) return;
 
-      console.log(timestamp);
-
-      await axios.post("https://sheetdb.io/api/v1/q0635nmb1flmn", {
-        data: [{ name, attendance, timestamp }],
-      });
-
-      setIsSubmitted(true);
-
-      toast("Terimakasih! Berhasil menyimpan buku tamu", { type: "success" });
-    } catch (error) {
-      console.log(error, "error");
-      toast(error.message, { type: "error" });
-    }
+    const timestamp = moment().format("MMMM Do YYYY, h:mm:ss a");
+    addAttendanceData({ name, attendance, timestamp });
   };
 
   return (
@@ -37,7 +46,7 @@ export default function GuestBook() {
       <p className="text-black text-xs text-center mb-4">
         Silahkan isi form kehadiran dibawah ini.
       </p>
-      {isSubmitted ? (
+      {isSuccess ? (
         <div className="p-2 bg-white shadow shadow-black/20 rounded-lg mb-6">
           <p className="text-sm text-black">
             Terimakasih <span className="font-semibold">{name}</span> atas
@@ -56,36 +65,31 @@ export default function GuestBook() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Nama Anda"
-            className="rounded-lg border-gray-400 border w-full bg-white px-2 py-1 drop-shadow-xl text-black active:border-primary-900 mb-4"
+            className="rounded-lg border-gray-200 border w-full bg-white px-2 py-1 drop-shadow-xl text-black active:border-primary-900 mb-4"
             required
           />
-          <label htmlFor="name" className="text-black block mb-1">
+          <label htmlFor="attendance" className="text-black block mb-1">
             Konfirmasi Kehadiran
           </label>
           <select
             type="text"
-            id="name"
+            id="attendance"
             name="attendance"
             placeholder="Nama Anda"
+            value={attendance}
             onChange={(e) => setAttendance(e.target.value)}
-            className="rounded-lg border-gray-400 border w-full bg-white px-2 py-1 drop-shadow-xl text-black active:border-primary-900"
+            className="rounded-lg border-gray-200 border w-full bg-white px-2 py-1 drop-shadow-xl text-black active:border-primary-900 appearance-none"
             required
           >
-            <option selected={attendance === ""} value="">
-              Pilih Kehadiran
-            </option>
-            <option selected={attendance === "Hadir"} value="Hadir">
-              Hadir
-            </option>
-            <option selected={attendance === "Tidak Hadir"} value="Tidak Hadir">
-              Tidak Hadir
-            </option>
+            <option value="">Pilih Kehadiran</option>
+            <option value="Hadir">Hadir</option>
+            <option value="Tidak Hadir">Tidak Hadir</option>
           </select>
           <button
             type="submit"
             className="block w-full py-2 mx-auto transition text-sm rounded-xl bg-primary-900 hover:bg-opacity-70 my-6"
           >
-            Konfirmasi Hadiah
+            {isLoading ? <>Menyimpan...</> : <>Konfirmasi Hadiah</>}
           </button>
         </form>
       )}

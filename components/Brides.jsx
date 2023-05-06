@@ -42,7 +42,8 @@ export default function Brides() {
       <Image src="/rofiqoh.svg" width={250} height={30} alt="rofiqoh" />
 
       <p className="px-4 mt-2 text-xs font-light text-center">
-        Putri Bungsu dari Bapak H. Suharto & Ibu Hj. Shochifah
+        Putri Bungsu dari <br />
+        Bapak H. Suharto & Ibu Hj. Shochifah
       </p>
 
       <span className="flex mt-2 mb-10">
