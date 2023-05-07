@@ -73,7 +73,25 @@ export default function Home() {
   return (
     <div className={`${poppins.className} text-white`}>
       <Head>
-        <title>Pernikahan Ofi & Wildan</title>
+        <title>Pernikahan Ofi & Wildan - Ajakanonline.com</title>
+        {/* <meta
+          name="description"
+          content="Kami memohon doa restu dari Bapak/Ibu/Saudara/(i)"
+        /> */}
+        <meta
+          property="og:title"
+          content="Pernikahan Ofi & Wildan - Ajakanonline.com"
+        />
+        <meta
+          property="og:url"
+          content="https://wedding-ofi-wildan.ajakanonline.com/"
+        />
+        {/* <meta property="og:description" content="Kami memohon doa restu dari Bapak/Ibu/Saudara/(i)" /> */}
+        <meta
+          property="og:image"
+          content="https://wildan-ofi-wedding.vercel.app/img/thumb.jpg"
+        />
+        <meta property="og:type" content="article" />
       </Head>
       {/* BANNER */}
       <Banner to={to} onOpen={playAudio} />
