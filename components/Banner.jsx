@@ -28,8 +28,8 @@ export default function Banner({ to, onOpen }) {
           width={300}
           height={90}
         />
-        <div className="items-center px-6 py-4 mt-4 mb-16 border-2 border-white shadow-xl bg-black/30 shadow-black/60 rounded-xl">
-          <p className="text-xs font-medium text-white">
+        <div className="items-center px-6 py-4 mx-6 mt-4 mb-16 border-2 border-white shadow-xl bg-black/30 shadow-black/60 rounded-xl">
+          <p className="text-xs font-medium text-center text-white">
             Kepada Yth. Bapak/Ibu/Saudara/i
           </p>
           <p className="mt-4 mb-4 text-2xl font-bold text-center text-white animate-pulse">
