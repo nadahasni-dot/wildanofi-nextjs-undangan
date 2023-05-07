@@ -73,14 +73,14 @@ export default function Home() {
   return (
     <div className={`${poppins.className} text-white`}>
       <Head>
-        <title>Pernikahan Ofi & Wildan - Ajakanonline.com</title>
+        <title>Ofi & Wildan - Ajakanonline.com</title>
         {/* <meta
           name="description"
           content="Kami memohon doa restu dari Bapak/Ibu/Saudara/(i)"
         /> */}
         <meta
           property="og:title"
-          content="Pernikahan Ofi & Wildan - Ajakanonline.com"
+          content="Ofi & Wildan - Ajakanonline.com"
         />
         <meta
           property="og:url"
