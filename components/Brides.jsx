@@ -39,57 +39,6 @@ export default function Brides() {
       </p>
 
       <div
-        data-aos="fade-left"
-        className="p-1 my-8 bg-contain bg-card-ovi h-80 w-72"
-      >
-        <Image
-          src="/img/ovi.png"
-          width={276}
-          height={276}
-          alt="rofiqoh"
-          className="mt-6 px-7"
-        />
-        <p className={`text-center mt-2 text-2xl ${parisienne.className}`}>
-          Ofi
-        </p>
-      </div>
-
-      <Image
-        data-aos="fade"
-        src="/rofiqoh.svg"
-        width={250}
-        height={30}
-        alt="rofiqoh"
-      />
-
-      <p
-        data-aos="fade"
-        className={`px-4 mt-2 text-xs font-light text-center ${poppins.className}`}
-      >
-        Putri Bungsu dari <br />
-        Bapak H. Suharto & Ibu Hj. Shochifah
-      </p>
-
-      <span data-aos="fade" className="flex mt-2 mb-10">
-        <Image src="/instagram.svg" width={16} height={16} alt="rofiqoh" />
-        <a
-          href="https://instagram.com/rofiqohms"
-          target="_blank"
-          className={`mx-1 text-xs font-light ${poppins.className}`}
-        >
-          rofiqohms
-        </a>
-      </span>
-
-      <Image
-        data-aos="fade"
-        src="/brides-divider.svg"
-        width={300}
-        height={60}
-        alt="divider"
-      />
-
-      <div
         data-aos="fade-right"
         className="p-1 my-8 bg-contain bg-card-wildan h-80 w-72"
       >
@@ -121,14 +70,65 @@ export default function Brides() {
         Bapak Zainuri & Ibu Euis Yudarsih R.
       </p>
 
-      <span data-aos="fade" className="flex mt-2">
+      <span data-aos="fade" className="flex mt-2 mb-8">
         <Image src="/instagram.svg" width={16} height={16} alt="rofiqoh" />
         <a
           href="https://instagram.com/wildannazar25"
           target="_blank"
-          className={`mx-1 text-xs font-light ${poppins.className}`}
+          className={`mx-1 text-white text-xs font-light ${poppins.className}`}
         >
           wildannazar25
+        </a>
+      </span>
+
+      <Image
+        data-aos="fade"
+        src="/brides-divider.svg"
+        width={300}
+        height={60}
+        alt="divider"
+      />
+
+      <div
+        data-aos="fade-left"
+        className="p-1 my-8 bg-contain bg-card-ovi h-80 w-72"
+      >
+        <Image
+          src="/img/ovi.png"
+          width={276}
+          height={276}
+          alt="rofiqoh"
+          className="mt-6 px-7"
+        />
+        <p className={`text-center mt-2 text-2xl ${parisienne.className}`}>
+          Ofi
+        </p>
+      </div>
+
+      <Image
+        data-aos="fade"
+        src="/rofiqoh.svg"
+        width={250}
+        height={30}
+        alt="rofiqoh"
+      />
+
+      <p
+        data-aos="fade"
+        className={`px-4 mt-2 text-xs font-light text-center ${poppins.className}`}
+      >
+        Putri Bungsu dari <br />
+        Bapak H. Suharto & Ibu Hj. Shochifah
+      </p>
+
+      <span data-aos="fade" className="flex mt-2">
+        <Image src="/instagram.svg" width={16} height={16} alt="rofiqoh" />
+        <a
+          href="https://instagram.com/rofiqohms"
+          target="_blank"
+          className={`mx-1 text-xs font-light ${poppins.className}`}
+        >
+          rofiqohms
         </a>
       </span>
     </section>

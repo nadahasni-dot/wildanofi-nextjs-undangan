@@ -3,13 +3,13 @@ import { toast } from "react-toastify";
 
 export default function GiftSheet() {
   const copyBankNumber = () => {
-    navigator.clipboard.writeText("0390836720");
+    navigator.clipboard.writeText("1430025332055");
     toast("No. Rekening berhasil disalin di papan klip", { type: "success" });
   };
 
   const copyAddress = () => {
     navigator.clipboard.writeText(
-      "Jl. Anjasmoro gang 1A RT 05  RW 01 Desa Turirejo Kecamatan Lawang Kabupaten Malang"
+      "Perum. Sumbersari Permai 1 blok J-17 , Jember"
     );
     toast("Alamat berhasil disalin di papan klip", { type: "success" });
   };

@@ -31,20 +31,20 @@ export default function Cover() {
           data-aos="fade"
           className={`text-primary-200 text-5xl text-center mt-5 ${alexBrush.className}`}
         >
-          Ofi & Wildan
+          Wildan & Ofi
         </h1>
 
         <h3 data-aos="fade" className="mt-2 text-center text-primary-200">
-          14.05.2023
+          03.06.2023
         </h3>
       </div>
 
       <div data-aos="fade" className="mb-14">
         {/* Countdown Timer */}
-        <CountdownTimer targetTime={new Date("May 14, 2023 07:00:00")} />
+        <CountdownTimer targetTime={new Date("June 03, 2023 12:30:00")} />
 
         <a
-          href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20230514T070000/20230514T180000&ctz=Asia/Jakarta&text=Pernikahan+Ofi+%26+Wildan&location=Jl.+Anjasmoro+Gg.+1A,+RT/RW+05/01+Turirejo+Kec.+Lawang&uid=f4462101-061e-4976-9b9e-cc3f37b97a7c"
+          href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20230603T123000/20230603T143000&ctz=Asia/Jakarta&text=Pernikahan+Ofi+%26+Wildan&location=Gedung+Zainuri+Universitas+Muhammadiyah+Jember&uid=f4462101-061e-4976-9b9e-cc3f37b97a7c"
           target="_blank"
         >
           <button className="block px-6 py-2 mx-auto font-semibold transition border rounded-lg hover:bg-primary-900 hover:bg-opacity-20 border-primary-900 text-primary-900">

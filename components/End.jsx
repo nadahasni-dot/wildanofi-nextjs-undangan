@@ -20,7 +20,7 @@ export default function End() {
           <p className="mb-4 text-4xl font-bold">With Love</p>
           <Image
             src="/title.svg"
-            alt="Pernikahan Ofi & Wildan"
+            alt="Pernikahan Wildan & Ofi"
             width={300}
             height={90}
             className="mb-20"

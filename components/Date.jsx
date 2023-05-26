@@ -35,45 +35,47 @@ export default function Date({ sesi }) {
         className="mx-5 bg-white drop-shadow rounded-xl"
       >
         {/* 1 Date Info */}
-        <div data-aos="fade-left" className="flex flex-col items-stretch">
+        <div data-aos="fade-left" className="flex flex-col items-stretch mb-4">
           <div className="flex items-center justify-between pt-8 pl-4 pr-6 mb-4">
             <div className="flex flex-col items-stretch">
               <h3 className="mb-2 text-xl font-medium text-primary-900">
-                Minggu
+                Sabtu
               </h3>
               <div className="flex items-center mb-1">
-                <p className="mr-2 text-3xl font-bold text-primary-900">14</p>
+                <p className="mr-2 text-3xl font-bold text-primary-900">03</p>
                 <div className="flex flex-col">
-                  <p className="text-lg text-primary-900">Mei 2023</p>
+                  <p className="text-lg text-primary-900">Juni 2023</p>
                   <p className="text-xs font-bold text-primary-900">
-                    Pukul 07.00 s.d Selesai
+                    Pukul 12.30 s.d 14.30 WIB
                   </p>
                 </div>
               </div>
               <Image
                 src="/dates-divider-sm.svg"
-                alt="akad nikah"
+                alt="divider"
                 width={210}
                 height={4}
               />
-              <p className="my-1 text-xs font-medium text-primary-900">
-                Kediaman Mempelai Wanita
+              <p className="mt-1 text-xs font-medium text-primary-900">
+                Gedung Zainuri Universitas<br />
+                Muhammadiyah Jember
               </p>
               <p className="text-xs text-primary-900">
-                Jl. Anjasmoro Gg. 1A, RT/RW 05/01 <br />
-                Turirejo Kec. Lawang
+                Gumuk Kerang, Karangrejo,
+                <br />
+                Sumbersari, Kabupaten Jember.
               </p>
             </div>
             <Image
-              src="/akad-nikah.svg"
-              alt="akad nikah"
+              src="/unduh-mantu.svg"
+              alt="unduh mantu"
               width={25}
               height={60}
             />
           </div>
 
           <a
-            href="https://maps.app.goo.gl/jLtewZGjkbiQA8JU7"
+            href="https://goo.gl/maps/AKz4PXtAmdUq1TnT8?coh=178571&entry=tt"
             target="_blank"
             className="block px-8 py-2 mx-auto text-xs transition border rounded-xl bg-primary-900 hover:bg-opacity-70 "
           >
@@ -81,17 +83,17 @@ export default function Date({ sesi }) {
           </a>
         </div>
 
-        <Image
+        {/* <Image
           data-aos="fade-down"
           src="/dates-divider.svg"
           alt="divider"
           width={600}
           height={30}
           className="px-4 my-6"
-        />
+        /> */}
 
         {/* 1 Date Info */}
-        <div data-aos="fade-right" className="flex flex-col items-stretch mb-6">
+        {/* <div data-aos="fade-right" className="flex flex-col items-stretch mb-6">
           <div className="flex items-center justify-between pl-6 pr-4 mb-4">
             <Image src="/resepsi.svg" alt="resepsi" width={46} height={80} />
             <div className="flex flex-col items-end">
@@ -136,7 +138,7 @@ export default function Date({ sesi }) {
           >
             Buka Maps
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

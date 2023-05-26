@@ -24,7 +24,7 @@ export default function Banner({ to, onOpen }) {
       >
         <Image
           src="/title.svg"
-          alt="Pernikahan Ofi & Wildan"
+          alt="Pernikahan Wildan & Ofi"
           width={300}
           height={90}
         />

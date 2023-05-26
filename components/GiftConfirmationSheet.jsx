@@ -90,7 +90,7 @@ export default function GiftConfirmationSheet() {
               required
             />
             <label htmlFor="type" className="block mb-1 text-black">
-              Konfirmasi Kehadiran
+              Tipe Hadiah
             </label>
             <select
               type="text"
